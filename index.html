@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagle Mobile</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #1a1a2e;
+    color: #eeeeee;
+    min-height: 100vh;
+    padding: 16px;
+    padding-bottom: 70px;
+}
+h1 { font-size: 20px; margin-bottom: 12px; }
+a { color: #64b5f6; text-decoration: none; }
+.back { display: inline-block; margin-bottom: 14px; font-size: 15px; color: #64b5f6; }
+.nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #16213e;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid #333;
+    z-index: 100;
+}
+.nav a {
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+}
+.nav a.active { color: #64b5f6; }
+.nav .icon { font-size: 18px; display: block; margin-bottom: 2px; }
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 12px;
+    border-bottom: 1px solid #2a2a4a;
+}
+.list-item .name { font-size: 16px; color: #fff; }
+.list-item .count { font-size: 13px; color: #888; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-chip {
+    background: #2a2a4a;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #dddddd;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+}
+.grid-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.search-input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #16213e;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 12px;
+    outline: none;
+}
+.detail-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #1a1a2e;
+    z-index: 200;
+    overflow-y: auto;
+}
+.detail-overlay.show { display: block; }
+.detail-close {
+    position: fixed;
+    top: 12px; left: 12px;
+    color: #64b5f6;
+    cursor: pointer;
+    z-index: 201;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+.detail-img {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+    background: #000;
+}
+.detail-info { padding: 16px; }
+.detail-info .row { margin-bottom: 14px; }
+.detail-info .label { font-size: 12px; color: #888; margin-bottom: 4px; }
+.detail-info .value { font-size: 15px; }
+.detail-info .value a { color: #64b5f6; word-break: break-all; }
+.detail-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.detail-tags span {
+    background: #2a2a4a;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+.color-row { display: flex; gap: 8px; margin-top: 4px; }
+.color-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid #444;
+}
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.page-nav a {
+    background: #2a2a4a;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #ddd;
+    font-size: 14px;
+}
+.page-nav a.current {
+    background: #64b5f6;
+    color: #000;
+}
+.sort-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.sort-btn {
+    background: #2a2a4a;
+    color: #ddd;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.sort-btn.active {
+    background: #64b5f6;
+    color: #000;
+}
+</style>
+</head>
+<body>
+<h1>🦅 Eagle Mobile</h1>
+<p style="color:#888;font-size:14px;margin-bottom:16px;">共 2829 张素材</p>
+<a href="folder_MOV4HPPARXTOV.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 玩具摆动作</span><span class="count">154张</span></div></a>
+<a href="folder_M5M75MXVB1NZI.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 Q版</span><span class="count">276张</span></div></a>
+<a href="folder_M5M5J9ANPKIBX.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 手办</span><span class="count">1594张</span></div></a>
+<a href="folder_M5ND8WW9NT8UU.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 别人做的模型</span><span class="count">5张</span></div></a>
+<a href="folder_M5ND2O04HXL70.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 人体</span><span class="count">1张</span></div></a>
+<a href="folder_M5ND587X1DFFT.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 原画</span><span class="count">56张</span></div></a>
+<a href="folder_M5M7VYNKFD3BN.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 色图</span><span class="count">13张</span></div></a>
+<a href="folder_MN660CF5YC9TB.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 实拍色</span><span class="count">26张</span></div></a>
+<a href="folder_MN6605BQUUM79.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 手办色</span><span class="count">400张</span></div></a>
+<a href="folder_M693SDF65S2WO.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 摄影</span><span class="count">1张</span></div></a>
+<a href="folder_MPZD07X3D5M7S.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 3次</span><span class="count">1张</span></div></a>
+<a href="folder_MN5U9ZYK1GVNQ.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 特效</span><span class="count">4张</span></div></a>
+<a href="folder_MN5U8WAZE0UKL.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 外景</span><span class="count">62张</span></div></a>
+<a href="folder_MN5U859OV4OLI.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 白棚</span><span class="count">70张</span></div></a>
+<a href="folder_MN5U9EMKT6U5N.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 场照</span><span class="count">18张</span></div></a>
+<a href="folder_MN5U8OAKIU165.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 实景棚</span><span class="count">122张</span></div></a>
+<a href="folder_MOFKQRD5TS8AF.html" style="text-decoration:none;"><div class="list-item"><span class="name">📁 教程</span><span class="count">2张</span></div></a>
+<div class="nav"><a href="index.html" class="active"><span class="icon">📁</span>文件夹</a><a href="tags.html"><span class="icon">🏷️</span>标签</a><a href="search.html"><span class="icon">🔍</span>搜索</a></div></body>
+</html>
